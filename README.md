@@ -1,1 +1,74 @@
-whisperai: Voice Assistant with ChatGPT IntegrationWhisperAI is a voice-activated assistant powered by OpenAI's GPT-3.5 model, designed to perform a variety of tasks based on spoken commands. It can respond to user queries, tell jokes, give time updates, plan itineraries, provide study assistance, and much more. The assistant interacts with users through voice, converting speech to text using the speech_recognition library, and responding via text-to-speech with pyttsx3.FeaturesVoice Command Recognition: Recognizes and processes spoken commands to carry out tasks.ChatGPT Integration: Interacts with OpenAI%E2%80%99s GPT-3.5 model to provide intelligent responses.Music Playback: Uses pywhatkit to search and play music on YouTube.Jokes: Fetches and tells jokes using the pyjokes library.Real-time Updates: Provides real-time information like time, date, and Wikipedia summaries.AI Travel Planner: Helps plan trips, including detailed itineraries for days and weeks.Study Assistant: Offers educational help, explains concepts, quizzes, and creates personalized study schedules.Mental Wellness Support: Provides therapeutic responses and positive affirmations.Fitness Tracker: Generates personalized fitness plans and tracks fitness goals.Technologies UsedSpeechRecognition: For converting voice to text.pyttsx3: For text-to-speech functionality.pywhatkit: For controlling YouTube music playback.pyjokes: For fetching jokes.wikipedia: To get summaries of famous personalities and topics.openai: For connecting to the GPT-3.5 model.dotenv: For securely loading API keys from environment variables.AI Assistant CapabilitiesPlan Your Day/Week: Personalized scheduling with activities based on your needs.AI Study Buddy: Assist with studying by explaining topics or quizzing on subjects.Therapist Mode: Offers comforting and affirming responses for mental well-being.Fitness Tracker: Helps set up fitness plans and tracks progress based on user input.Setup and InstallationClone the repository:git clone https://github.com/your-username/whisperai.gitInstall dependencies:pip install -r requirements.txtSet up your OpenAI API key:Create a .env file in the root directory and add your OpenAI API key:OPENAI_API_KEY=your-api-key-hereRun the assistant:python main.pyAfter running, the assistant will start listening for commands. Speak "Whisper" followed by your request, and it will process and respond accordingly.Known IssuesMobile-Friendly Version: The mobile-friendly version of the app is still in progress and is not fully functional for all devices.Performance: The speech recognition and processing might not work as expected on mobile browsers.
+# 🔊 WhisprAI: Voice Assistant with ChatGPT Integration
+
+WhisprAI is a sleek, voice-activated assistant powered by OpenAI's GPT-3.5. It listens to your commands, responds intelligently, and performs a range of tasks from playing music to planning your day — all through voice.
+
+---
+
+## ✨ Features
+
+- 🎙️ **Voice Command Recognition** — Understands and responds to spoken commands.
+- 🤖 **GPT-3.5 Intelligence** — Integrated with ChatGPT for smart, conversational replies.
+- 🎵 **Music Playback** — Plays music on YouTube using `pywhatkit`.
+- 😂 **Joke Teller** — Brightens your day with jokes from the `pyjokes` library.
+- 🕐 **Real-time Info** — Tells the time, date, and Wikipedia summaries.
+- 🧠 **Study Assistant** — Explains concepts, quizzes you, and makes study plans.
+- 🌿 **Mental Wellness Support** — Sends positive affirmations and gentle encouragement.
+- 💪 **Fitness Tracker** — Generates personalized fitness routines and goals.
+- 🌍 **AI Travel Planner** — Plans your day or week, including custom itineraries.
+
+---
+
+## 🧰 Tech Stack
+
+| Purpose             | Library / API         |
+|---------------------|------------------------|
+| Voice to Text       | `speech_recognition`   |
+| Text to Voice       | `pyttsx3`              |
+| Music Playback      | `pywhatkit`            |
+| Jokes               | `pyjokes`              |
+| Info Summaries      | `wikipedia`            |
+| AI Conversations    | `openai`               |
+| Environment Variables| `python-dotenv`        |
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/arshitadewan7/whisprAI.git
+cd whisprAI
+2. Install Dependencies
+pip install -r requirements.txt
+3. Set Your OpenAI API Key
+Create a .env file in the root directory:
+
+OPENAI_API_KEY=your-openai-api-key-here
+✅ Be sure to add .env to .gitignore to keep your key secure.
+4. Run the Assistant
+python main.py
+Now speak the word "Whisper" followed by your command!
+
+🧠 Example Commands
+
+“Whisper, play Coldplay on YouTube.”
+“Whisper, what’s the time?”
+“Whisper, tell me a joke.”
+“Whisper, help me study math.”
+“Whisper, plan my trip to Melbourne.”
+⚠️ Known Issues
+
+📱 Mobile support is limited; The mobile-friendly version of the app is still in progress and is not fully functional for all devices.
+🎤 Speech recognition may vary based on mic quality/environment.
+💡 Ideas or Contributions?
+
+Pull requests and issues are welcome! Let’s make WhisperAI even better together.
+
+📄 License
+
+MIT License — feel free to fork and build upon it.
+
+🤝 Connect with Me
+
+GitHub: @arshitadewan7
