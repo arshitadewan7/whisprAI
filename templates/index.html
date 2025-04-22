@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhisperAI</title>
+</head>
+<body>
+    <h1>WhisperAI Assistant</h1>
+    <button type="button" id="voiceCommandBtn">Give Voice Command</button>
+    <p id="responseText"></p>
+
+    <script>
+        document.getElementById("voiceCommandBtn").addEventListener("click", function() {
+            // Call speech recognition API to capture the voice command
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.start();
+
+            recognition.onresult = function(event) {
+                const command = event.results[0][0].transcript;
+                console.log("Command received: ", command);
+                
+                // Send the command to the Flask backend for processing
+                fetch("/process_command", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ command: command })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("responseText").innerText = data.response;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            };
+
+            recognition.onerror = function(event) {
+                console.error("Speech recognition error", event);
+            };
+        });
+    </script>
+</body>
+</html>
